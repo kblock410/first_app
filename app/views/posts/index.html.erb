@@ -1,0 +1,24 @@
+<h1>トップページ</h1>
+
+<%
+=begin%>
+  erbタグを使ってRubyの記述をする
+  <% %>はブラウザ上に表示しない
+  <%= %>は表示する
+<%
+=end%>
+
+<% @posts.each do |post|%>
+  <div>
+  <%= post.content %>
+
+    <%= post.created_at %>
+  </div>
+<% end %>
+
+<%
+=begin%>
+  @postsにはPostモデルの全てのレコードが含まれeachで一つずつ表示する
+  このままでは横一列に表示されるから<div>を使ってブロックレベル要素として扱う
+<%
+=end%>
